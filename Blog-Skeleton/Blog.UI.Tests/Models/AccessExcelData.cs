@@ -16,14 +16,14 @@ namespace Blog.UI.Tests.Models
         {
             var filename = "UserData.xlsx";
             var path = ConfigurationManager.AppSettings["TestDataSheetPath"];
-            if (!Directory.Exists(path))
-                Directory.CreateDirectory(path);
-            else
-                _testExcelFiles = Path.Combine(path, filename);
+           // if (!Directory.Exists(path))
+           //     Directory.CreateDirectory(path);
+           // else
+            //    _testExcelFiles = Path.Combine(path, filename);
 
             var con = string.Format(@"Provider=Microsoft.ACE.OLEDB.12.0;
 		                              Data Source = {0}; 
-		                              Extended Properties=Excel 12.0;", _testExcelFiles);
+		                              Extended Properties=Excel 12.0;", path+filename);
             return con;
         }
 
